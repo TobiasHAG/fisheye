@@ -3,7 +3,7 @@
 
         try {
                 let photographers = await fetch('data/photographers.json');
-                console.log(photographers);
+                console.log(photographers)
                 return await photographers.json();
             } catch (error) {
                 console.log(error);
@@ -29,4 +29,3 @@
     };
     
     init();
-    
