@@ -1,16 +1,7 @@
-    async function getPhotographers() {
-        // Penser à remplacer par les données récupérées dans le json
-
-        try {
-                let photographers = await fetch('data/photographers.json');
-                console.log(photographers)
-                return await photographers.json();
-            } catch (error) {
-                console.log(error);
-            }
-        }
-
-        // et bien retourner le tableau photographers seulement une fois
+    import api from "../utils/api.js";
+    console.log(api)
+    console.log(api.fetchData());
+    // et bien retourner le tableau photographers seulement une fois
 
     async function displayData(photographers) {
         const photographersSection = document.querySelector(".photographer_section");
@@ -24,7 +15,7 @@
 
     async function init() {
         // Récupère les datas des photographes
-        const { photographers } = await getPhotographers();
+        const { photographers } = await api.fetchData();
         displayData(photographers);
     };
     
