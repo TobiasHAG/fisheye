@@ -1,6 +1,6 @@
     import api from "../utils/api.js";
-    console.log(api)
-    console.log(api.fetchData());
+    import photographerFactory from "../factories/photographer.js";
+
     // et bien retourner le tableau photographers seulement une fois
 
     async function displayData(photographers) {
@@ -15,8 +15,8 @@
 
     async function init() {
         // Récupère les datas des photographes
-        const { photographers } = await api.fetchData();
-        displayData(photographers);
+        await api.fetchData();
+        displayData(api.photographers.photographers);
     };
     
     init();

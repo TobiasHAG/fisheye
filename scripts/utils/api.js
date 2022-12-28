@@ -1,9 +1,9 @@
 class API {
-
-    _photographers = [];
-    _photographer = [];
-    photographerMedia = [];
-    PhotographersError = [{
+    baseURL = "data/photographers.json";
+    photographers = [];
+    _photographer = {};
+    userCurrentId = null;
+    PhotographersError = {
         "name": "Unknown",
         "id": 0,
         "city": "Unknown",
@@ -11,19 +11,25 @@ class API {
         "tagline": "Unknown",
         "price": 0,
         "portrait": ""
-    }];
+    };
 
     async fetchData() {
         try {
-            photographers = fetch(`data/photographers.json`);
-            return photographers.json();
-        } catch {
-            return this.PhotographersError; // ou catch (error) { console.log(error) }
+            const res = await fetch(this.baseURL);
+            const datas = await res.json();
+            this.photographers = datas;
+            return datas;
+        } catch(err) {
+            console.log(err);
+            return [PhotographersError]; // ou catch (error) { console.log(error) }
         }
     };
 
     _buildPhotograph(id) {
-        userId = Number(id);
+        const userId = Number(id);
+        this._photographer = this.photographers.photographers.find(
+            (item) => item.id === userId
+        );
         const PhotographerMedia = this.photographers.media.filter(
             (item) => item.photographerId === userId
         ); // [{}; {}]

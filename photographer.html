@@ -5,6 +5,12 @@
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"/>
     <title>Fisheye - photographe </title>
   </head>
   <body>
@@ -32,8 +38,31 @@
 				</form>
 			</div>
 		</div>
-    <script src="/scripts/pages/photographer.js"></script>
-    <script src="scripts/factories/photographer.js"></script>
-    <script src="/scripts/utils/contactForm.js"></script>
+
+    <div class="filter-div">
+      <p>Trier par</p>
+      <select name="filter" id="filter">
+        <option value="Popularite">Popularité</option>
+        <option value="Date">Date</option>
+        <option value="Titre">Titre</option>
+      </select>
+    </div>
+
+    <div class="photos-grid">
+
+    </div>
+
+    <div class="bottom-text">
+      <div class="bottom-text-likes">
+        <p>287 035</p>
+        <i class="fa-solid fa-heart"></i>
+      </div>
+      <div class="bottom-price">
+        <p>300€/jour</p>
+      </div>
+    </div>
+    <script type="module" src="/scripts/pages/photographer.js"></script>
+    <script type="module" src="/scripts/factories/photographer.js"></script>
+    <script type="module" src="/scripts/utils/contactForm.js"></script>
   </body>
 </html>

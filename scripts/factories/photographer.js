@@ -44,3 +44,5 @@ function photographerFactory(data) {
 
     return { name, picture, id, getUserCardDOM, getSingleUserCardDOM }
 }
+
+export default photographerFactory
