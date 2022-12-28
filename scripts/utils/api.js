@@ -1,6 +1,6 @@
 class API {
     baseURL = "data/photographers.json";
-    photographers = [];
+    _photographers = [];
     _photographer = {};
     userCurrentId = null;
     PhotographersError = {
@@ -17,7 +17,7 @@ class API {
         try {
             const res = await fetch(this.baseURL);
             const datas = await res.json();
-            this.photographers = datas;
+            this._photographers = datas;
             return datas;
         } catch(err) {
             console.log(err);
@@ -27,21 +27,21 @@ class API {
 
     _buildPhotograph(id) {
         const userId = Number(id);
-        this._photographer = this.photographers.photographers.find(
+        this._photographer = this._photographers.photographers.find(
             (item) => item.id === userId
         );
-        const PhotographerMedia = this.photographers.media.filter(
+        const photographerMedia = this._photographers.media.filter(
             (item) => item.photographerId === userId
         ); // [{}; {}]
 
-    this.photographer = {
-        ...this.photographer,
+    this._photographer = {
+        ...this._photographer,
         medias: photographerMedia,
         };
     };
 
     get photographers() {
-        return this.photographers;
+        return this._photographers;
     }
 
     get photographer() {

@@ -32,13 +32,29 @@ function photographerFactory(data) {
 
     function getSingleUserCardDOM() {
         const div = document.createElement( 'div' );
+        div.className = "photograph-header-div";
+        const button = document.createElement( 'button' );
+        button.className = "contact_button";
+        button.setAttribute("onclick", "displayModal()");
+        button.textContent = "Contactez-moi";
+        const div2 = document.createElement( 'div' );
+        div2.className = "div-photographer-info";
         const titre = document.createElement( 'h1' );
         titre.textContent = name;
         const p1 = document.createElement( 'p' );
-        p1.className = "photographer_tagline";
+        p1.className = "photographer_description";
         p1.textContent = tagline;
-        div.appendChild(titre);
-        div.appendChild(p1);
+        const place = document.createElement( 'p' );
+        place.className = "photographer_place";
+        place.textContent = city + ', ' + country;
+        const img = document.createElement( 'img' );
+        img.setAttribute("src", picture);
+        div.appendChild(div2);
+        div.appendChild(button);
+        div.appendChild(img);
+        div2.appendChild(titre);
+        div2.appendChild(place);
+        div2.appendChild(p1);
         return (div);
     }
 

@@ -4,16 +4,61 @@
 
 .photograph-header {
     background-color: #FAFAFA;
-    height: 300px;
+    height: 400px;  
     margin: 0 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 28%;
 }
 
-.photograph-header img {
+.photograph-header .photograph-header-div {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    align-content: center;
+    padding-top: 50px;
+    margin: 0px 100px 0px -100px;
+}
+
+.photograph-header div .div-photographer-info {
+    display: flex;
+    flex-direction: column;
+    margin-right: -120px;
+}
+
+.photograph-header div .div-photographer-info h1 {
+    font-size: 64px;
+    font-weight: 400;
+    margin-bottom: 5px;
+    color: #D3573C;
+    font-family: "DM Sans", sans-serif;
+}
+
+.photograph-header div .div-photographer-info .photographer_place {
+    font-size: 24px;
+    margin-top: 5px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    color: #901C1C;
+    font-family: "DM Sans", sans-serif;
+}
+
+.photograph-header div .div-photographer-info .photographer_description {
+    font-size: 18px;
+    margin-top: 5px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    color: #525252;
+    font-family: "DM Sans", sans-serif;
+}
+
+.photograph-header div img {
     border-radius: 50%;
+    width: 300px;
+    height: 300px;
+}
+
+.photograph-header .photograph-header-div button {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
 }
 
 .contact_button {
@@ -125,4 +170,34 @@ form input {
     flex-direction: row;
     gap: 5px;
     align-items: center;
+}
+
+.photos-grid {
+    display: flex;
+    justify-content: center;
+    gap: 300px;
+    row-gap: 50px;
+    margin: 30px 100px;
+    flex-wrap: wrap;
+    flex-basis: 33.333333%;
+}
+
+.photos-grid-text {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    color:#901C1C;
+    font-size: 22px;
+}
+
+.photos-grid-likes {
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color:#901C1C;
+    font-size: 22px;
+    font-weight: 700;
 }
