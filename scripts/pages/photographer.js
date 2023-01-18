@@ -4,17 +4,14 @@ import mediaFactory from "../factories/mediaFactory.js";
 
     async function displayData(photographer) {
         const photographersHeader = document.querySelector(".photograph-header");
-
-        //const params = (new URL(document.location)).searchParams;
-        //const id = params.get('id');
-        //const nombre = 82;
-        //console.log(id);
-
-        // TODO : vérification id URL avec id JSON pour renvoyer les bonne données
+        const ModalHeader = document.getElementById("contact_modal_header");
 
                 const photographerModel = photographerFactory(photographer);
                 const SingleuserCardDOM = photographerModel.getSingleUserCardDOM();
+                const SingleUserNameDOM = photographerModel.getSingleUserNameDOM();
                 photographersHeader.appendChild(SingleuserCardDOM);
+                ModalHeader.appendChild(SingleUserNameDOM);
+
     };
 
     async function displayDataMedia(photographer) {

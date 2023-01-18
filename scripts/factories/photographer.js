@@ -35,8 +35,8 @@ function photographerFactory(data) {
         div.className = "photograph-header-div";
         const button = document.createElement( 'button' );
         button.className = "contact_button";
-        button.setAttribute("onclick", "displayModal()");
         button.textContent = "Contactez-moi";
+        button.setAttribute("onclick", "displayModal()");
         const div2 = document.createElement( 'div' );
         div2.className = "div-photographer-info";
         const titre = document.createElement( 'h1' );
@@ -58,7 +58,17 @@ function photographerFactory(data) {
         return (div);
     }
 
-    return { name, picture, id, getUserCardDOM, getSingleUserCardDOM }
+    function getSingleUserNameDOM() {
+        const div = document.createElement( 'div' );
+        div.className = "modal-photographer-div";
+        const h2 = document.createElement( 'h2' );
+        h2.className = "modal-photographer-name";
+        h2.textContent = name;
+        div.appendChild(h2);
+        return (div);
+    }
+
+    return { name, picture, id, getUserCardDOM, getSingleUserCardDOM, getSingleUserNameDOM }
 }
 
 export default photographerFactory
