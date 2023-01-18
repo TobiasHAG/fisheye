@@ -29,18 +29,18 @@
             <img src="assets/icons/close.svg" onclick="closeModal()" />
           </div>
         </header>
-				<form>
+				<form method="get">
 					<div>
 						<label>Prénom</label>
-						<input />
+						<input id="first" minlength="2"/>
             <label>Nom</label>
-            <input />
+            <input id="last" minlength="2"/>
             <label>Email</label>
-            <input />
+            <input id="email" />
             <label>Votre message</label>
-            <input />
+            <input id="message" minlength="10"/>
 					</div>
-          <button class="contact_button">Envoyer</button>
+          <button class="contact_button" id="btn_envoyer">Envoyer</button>
 				</form>
 			</div>
 		</div>

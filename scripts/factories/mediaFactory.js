@@ -8,6 +8,11 @@ function MediaFactory(data) {
         const article = document.createElement( 'article' );
         const link = document.createElement( 'a' );
         // link.setAttribute("href", lien);
+        // if(imageUrl === false) {
+        //    créer l'img
+        // } else {
+        //    créer la video
+        // }
         const img = document.createElement( 'img' );
         img.setAttribute("src", imageUrl)
         img.setAttribute("width", 500)

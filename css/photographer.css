@@ -1,5 +1,11 @@
 #contact_modal {
     display: none;
+    z-index: 1000;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0%;
+    backdrop-filter: blur(15px);
 }
 
 .photograph-header {
@@ -84,7 +90,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 35px;
-    margin: auto;
+    margin: 20vh auto;
 }
 
 .modal header {
