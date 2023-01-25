@@ -7,12 +7,8 @@ function MediaFactory(data) {
     function getMediaCardDOM() {
         const article = document.createElement( 'article' );
         const link = document.createElement( 'a' );
-        // link.setAttribute("href", lien);
-        // if(imageUrl === false) {
-        //    créer l'img
-        // } else {
-        //    créer la video
-        // }
+        link.className = "link-img";
+        link.setAttribute("onclick", "displayModalLightbox()");
         const img = document.createElement( 'img' );
         img.setAttribute("src", imageUrl)
         img.setAttribute("width", 500)

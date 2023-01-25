@@ -24,11 +24,21 @@ import mediaFactory from "../factories/mediaFactory.js";
         });
     };
 
+    // Fonction de display des data dans la Lightbox
+
+    async function displayDataMediaOne(photographer) {
+        const LightboxHeader = document.querySelector(".modal-2");
+
+        const LightboxMediaDOM = displayModalLightbox(photographer);
+        LightboxHeader.appendChild(LightboxMediaDOM);
+    };
+
     async function initPage() {
         // Récupère les datas des photographes
         await api.fetchData();
         displayData(api.photographer);
         displayDataMedia(api.photographer);
+        displayDataMediaOne(api.photographer);
     };
     
     initPage();

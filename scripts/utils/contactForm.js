@@ -1,4 +1,6 @@
 const modal_button = document.querySelector(".contact_button");
+const close_lightbox = document.querySelector(".lightbox-close");
+const link_photo = document.querySelector(".link-img");
 
 // Display la modal du formulaire ON/OFF
 
@@ -10,6 +12,26 @@ function displayModal() {
 function closeModal() {
     const modal = document.getElementById("contact_modal");
     modal.style.display = "none";
+}
+
+// Display de la modal lightbox
+
+function displayModalLightbox(data) {
+    const modal2 = document.querySelector(".lightbox-modal");
+	modal2.style.display = "block";
+
+    const { id, photographerId, title } = data;
+    const imageUrl = `assets/media/${data.image}`;
+
+    const img = document.querySelector(".lightbox-img");
+    img.setAttribute("src", imageUrl);
+    const description = document.querySelector(".lightbox-desc");
+    description.innerHTML = title;
+}
+
+function closeModalLightbox() {
+    const modal2 = document.querySelector(".lightbox-modal");
+    modal2.style.display = "none";
 }
 
 // Récupération des id du formulaire pour vérification
@@ -30,7 +52,8 @@ const validation = document.getElementById("btn_envoyer");
 // Fonction de vérification après click sur submit formulaire des éléments
 // Renvoie un console log en cas de réussite
 
-function validate() {
+function validate(e) {
+    e.preventDefault();
     if (prenom.value.trim() === '' || prenom.value.length< 2)
     {
         prenom.innerHTML = document.getElementById(prenom);
@@ -53,3 +76,4 @@ function validate() {
 }
 
 validation.addEventListener("click", validate);
+close_lightbox.addEventListener("click", closeModalLightbox);
