@@ -29,7 +29,7 @@ import mediaFactory from "../factories/mediaFactory.js";
     async function displayDataMediaOne(photographer) {
         const LightboxHeader = document.querySelector(".modal-2");
 
-        const LightboxMediaDOM = displayModalLightbox(photographer);
+        const LightboxMediaDOM = displayModalLightbox(data, medias);
         LightboxHeader.appendChild(LightboxMediaDOM);
     };
 

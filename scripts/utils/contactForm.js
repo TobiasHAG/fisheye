@@ -1,6 +1,7 @@
 const modal_button = document.querySelector(".contact_button");
 const close_lightbox = document.querySelector(".lightbox-close");
 const link_photo = document.querySelector(".link-img");
+const next = document.querySelector(".after-slide");
 
 // Display la modal du formulaire ON/OFF
 
@@ -12,21 +13,36 @@ function displayModal() {
 function closeModal() {
     const modal = document.getElementById("contact_modal");
     modal.style.display = "none";
-}
+};
 
 // Display de la modal lightbox
 
-function displayModalLightbox(data) {
-    const modal2 = document.querySelector(".lightbox-modal");
-	modal2.style.display = "block";
+const { id, photographerId, title } = data;
 
-    const { id, photographerId, title } = data;
-    const imageUrl = `assets/media/${data.image}`;
+function getNextMedia(current, data) {
+    const currentPos = list.findIndex(item => item.id === current.id);
+    return currentPos + 1 < current.length ? next + 1 : 0;
+};
 
+const imageUrl = `assets/media/${data.image}`;
+const displayMedia = (media) => {
+    console.log(imageUrl);
     const img = document.querySelector(".lightbox-img");
     img.setAttribute("src", imageUrl);
     const description = document.querySelector(".lightbox-desc");
-    description.innerHTML = title;
+    description.innerHTML = media.title;
+}
+
+function displayModalLightbox(data, media) {
+    const modal2 = document.querySelector(".lightbox-modal");
+	modal2.style.display = "block";
+    let currentMedia = media;
+    next.addEventListener("click", () => {
+        const nextPos = getNextMedia(currentMedia, data.medias);
+        currentMedia = data.medias[nextPos];
+        displayMedia(currentMedia);
+    });
+    displayMedia(media);
 }
 
 function closeModalLightbox() {
