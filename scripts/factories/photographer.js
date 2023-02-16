@@ -1,8 +1,20 @@
+/**
+ * It takes a data object as an argument, and returns an object with the same properties as the data
+ * object, plus a few methods
+ * @param data - the data object that we get from the API
+ * @returns The function getUserCardDOM, getSingleUserCardDOM and getSingleUserNameDOM
+ */
+
 function photographerFactory(data) {
     const { name, portrait, city, country, tagline, price, id } = data;
 
     const picture = `assets/photographers/${portrait}`;
     const lien = `photographer.html?id=${id}`;
+
+    /**
+     * It creates a DOM element for a user card, and returns it
+     * @returns the article element with all the child elements.
+     */
 
     function getUserCardDOM() {
         const article = document.createElement( 'article' );
@@ -30,6 +42,12 @@ function photographerFactory(data) {
         return (article);
     }
 
+    /**
+     * It creates a div, adds a button, a title, a description, a place, and an image, and returns the
+     * div
+     * @returns A div with a button, an image, a title, a place and a description.
+     */
+
     function getSingleUserCardDOM() {
         const div = document.createElement( 'div' );
         div.className = "photograph-header-div";
@@ -49,6 +67,8 @@ function photographerFactory(data) {
         place.textContent = city + ', ' + country;
         const img = document.createElement( 'img' );
         img.setAttribute("src", picture);
+        const prix = document.querySelector(".price");
+        prix.textContent = price + " € / jour";
         div.appendChild(div2);
         div.appendChild(button);
         div.appendChild(img);
@@ -58,6 +78,13 @@ function photographerFactory(data) {
         return (div);
     }
 
+    /**
+     * It creates a div element, adds a class name to it, creates an h2 element, adds a class name to
+     * it, adds the name of the photographer to the h2 element, and then adds the h2 element to the div
+     * element
+     * @returns the div element with the h2 element nested inside.
+     */
+    
     function getSingleUserNameDOM() {
         const div = document.createElement( 'div' );
         div.className = "modal-photographer-div";

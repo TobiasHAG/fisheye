@@ -148,7 +148,8 @@
 }
 
 .lightbox-desc {
-    margin-left: 20%;
+    display: flex;
+    justify-content: center;
 }
 
 .modal header {
@@ -264,7 +265,7 @@ form input {
     justify-content: space-between;
     align-items: center;
     color:#901C1C;
-    font-size: 22px;
+    font-size: 20px;
 }
 
 .photos-grid-likes {

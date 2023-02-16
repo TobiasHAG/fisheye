@@ -52,6 +52,7 @@
             <p><</p>
           </a>
           <img class="lightbox-img">
+          <video class="lightbox-vid"></video>
           <a class="after-slide">
             <p>></p>
           </a>
@@ -63,9 +64,9 @@
     <div class="filter-div">
       <p>Trier par</p>
       <select name="filter" id="filter">
-        <option value="Popularite">Popularité</option>
-        <option value="Date">Date</option>
-        <option value="Titre">Titre</option>
+        <option value="Popularite" id="filter_popularite">Popularité</option>
+        <option value="Date" id="filter_date">Date</option>
+        <option value="Titre" id="filter_titre">Titre</option>
       </select>
     </div>
 
@@ -75,11 +76,11 @@
 
     <div class="bottom-text">
       <div class="bottom-text-likes">
-        <p>287 035</p>
+        <p class="likes"></p>
         <i class="fa-solid fa-heart"></i>
       </div>
       <div class="bottom-price">
-        <p>300€/jour</p>
+        <p class="price">300€/jour</p>
       </div>
     </div>
     <script type="module" src="/scripts/pages/photographer.js"></script>

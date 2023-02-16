@@ -1,3 +1,7 @@
+/* I'm trying to fetch data from an API and then create a new object with the photographer's
+information and the media information.
+</code> */
+
 class API {
     baseURL = "data/photographers.json";
     _photographers = [];
@@ -13,6 +17,7 @@ class API {
         "portrait": ""
     };
 
+    /* Fetching data from the API. */
     async fetchData() {
         try {
             const res = await fetch(this.baseURL);
@@ -25,6 +30,7 @@ class API {
         }
     };
 
+/* Creating a new object with the photographer's information and the media information. */
     _buildPhotograph(id) {
         const userId = Number(id);
         this._photographer = this._photographers.photographers.find(
